@@ -3,7 +3,12 @@ package study.extend;
 import java.util.Iterator;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class NumberGameRoom extends Room{
+	
+	private Logger logger = LoggerFactory.getLogger(NumberGameRoom.class);
 	
 	RoomType roomType = RoomType.NUMBER_GAME_ROOM;
 	
@@ -16,7 +21,7 @@ public class NumberGameRoom extends Room{
 		
 		for (Player player : playerList) {
 			
-			System.out.println("\n" + player.name + "님의 차례입니다.\n");
+			logger.info("\n" + player.name + "님의 차례입니다.\n");
 			
 			long starTime = System.currentTimeMillis();
 			
@@ -26,12 +31,12 @@ public class NumberGameRoom extends Room{
 				int num2 = randomNum.nextInt(9);
 				int answer = num1*num2;
 				String question = "다음 문제의 답을 입력하세요 : " + num1 +  " x " + num2 + " = ";
-
-				System.out.println(question);
+				
+				logger.info(question);
 				
 				while (answer != App.inputNo("답 : ")) {
 					
-					System.out.println(question);
+					logger.info(question);
 					
 				}
 				
@@ -50,7 +55,7 @@ public class NumberGameRoom extends Room{
 			
 		}
 		
-		System.out.println("\n" + winner + "님이 " + bestRecord + "초의 기록으로 최종 승리하셨습니다.");
+		logger.info("\n" + winner + "님이 " + bestRecord + "초의 기록으로 최종 승리하셨습니다.");
 		
 	}
 }

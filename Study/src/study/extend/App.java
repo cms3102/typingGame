@@ -2,16 +2,21 @@ package study.extend;
 
 import java.util.Scanner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 public class App {
-
+	
 	private static Scanner scan = new Scanner(System.in);
-
+	private static Logger logger = LoggerFactory.getLogger(App.class);
+	
 	public App() {
 		// # 플레이할 방 선택하기
-		System.out.println("## 플레이할 게임 방을 선택하세요 ##");
+		logger.info("## 플레이할 게임 방을 선택하세요 ##");
 		for (int i = 0; i < RoomType.values().length; i++) {
 			RoomType type = RoomType.values()[i];
-			System.out.println((i + 1) + ". " + type.getName());
+			logger.info((i + 1) + ". " + type.getName());
 		}
 		RoomType gameType = RoomType.getRoomType(inputNo("플레이할 게임은 ?")-1);
 		Room room;
@@ -23,7 +28,7 @@ public class App {
 			room = new NumberGameRoom();
 			break;
 		}
-		System.out.println(gameType.getName()+" 을 선택하셨습니다!!");
+		logger.info(gameType.getName()+" 을 선택하셨습니다!!");
 		
 		// # 플레이어 수 입력 받기
 		int playerCount = inputNo("플레이어의 수를 입력하세요 : ");
@@ -39,7 +44,7 @@ public class App {
 	public static int inputNo(String printMessage) {
 		while (true) {
 			try {
-				System.out.print(printMessage);
+				logger.info(printMessage);
 				return scan.nextInt();
 			} catch (Exception e) {
 			} finally {
@@ -49,7 +54,7 @@ public class App {
 	}
 
 	public static String inputText(String printMessage) {
-		System.out.print(printMessage);
+		logger.info(printMessage);
 		return scan.nextLine();
 	}
 

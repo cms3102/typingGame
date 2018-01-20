@@ -3,8 +3,15 @@ package study.extend;
 import java.util.ArrayList;
 import java.util.List;
 
-// # 일반적인 방
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
+// 기본 방
 public abstract class Room {
+	
+	private Logger logger = LoggerFactory.getLogger(Room.class);
+	
 	String name;
 	int position;
 	
@@ -12,7 +19,7 @@ public abstract class Room {
 	
 	public void enter(Player player){
 		playerList.add(player);
-		System.out.println(player.name + "님이 입장하셨습니다.");
+		logger.info(player.name + "님이 입장하셨습니다.");
 	}
 	
 	public void exit(Player player){
