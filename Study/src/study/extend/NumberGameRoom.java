@@ -17,7 +17,7 @@ public class NumberGameRoom extends Room{
 	
 	@Override
 	public void play() {
-		
+		 
 		for (Player player : playerList) {
 			
 			logger.info("\n" + player.name + "님의 차례입니다.\n");
