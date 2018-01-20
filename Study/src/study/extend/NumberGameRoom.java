@@ -1,6 +1,5 @@
 package study.extend;
 
-import java.util.Iterator;
 import java.util.Random;
 
 import org.slf4j.Logger;
