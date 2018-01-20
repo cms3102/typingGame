@@ -9,7 +9,7 @@ public class TextGameRoom extends Room{
 	
 	RoomType roomType = RoomType.TEXT_GAME_ROOM;
 	
-	String[] questions = {"울릉도 동남쪽 뱃길 따라 이백리", "밤이 깊었네 방황하며 춤을 추는 불빛들", "또 하루 멀어져 간다 내 뿜은 담배연기 처럼"};
+	String[] questions = {"울릉도 동남쪽 뱃길 따라 이백리", "밤이 깊었네 방황하며 춤을 추는 불빛들", "또 하루 멀어져 간다 내뿜은 담배연기 처럼"};
 	
 	@Override
 	public void play() {
